@@ -1,104 +1,80 @@
-@import url('/notionApp2/index.css');
+/* the props */
+@import "https://unpkg.com/open-props";
 
-/* :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* optional imports that use the props */
+@import "https://unpkg.com/open-props/normalize.min.css";
+@import "https://unpkg.com/open-props/buttons.min.css";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/* just dark or light themes */
+@import "https://unpkg.com/open-props/normalize.dark.min.css";
+@import "https://unpkg.com/open-props/buttons.dark.min.css";
+@import "https://unpkg.com/open-props/normalize.light.min.css";
+@import "https://unpkg.com/open-props/buttons.light.min.css";
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* individual imports */
+@import "https://unpkg.com/open-props/indigo.min.css";
+@import "https://unpkg.com/open-props/indigo-hsl.min.css";
+@import "https://unpkg.com/open-props/easings.min.css";
+@import "https://unpkg.com/open-props/animations.min.css";
+@import "https://unpkg.com/open-props/sizes.min.css";
+@import "https://unpkg.com/open-props/gradients.min.css";
+/* see PropPacks for the full list */
+
+html {
+    font-family: var(--font-humanist);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  background: var(--gradient-9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, \5fae\8f6f\96c5\9ed1, Arial, sans-serif;
+    color: #555555;
+    --text-font-stack: "Open Sans", "Arial", sans-serif;
+    background: var(--gradient-9);
+    padding-top: 20px;
+  }
+  
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-primary:  #25c9d0;
+    --color-success: #39d279;
+    --color-warning: var(--color-warning, #f5a623);
+    --color-danger: var(--color-danger, #e52d2d);
+    --color-bubble: #45d0d6;
+    --color-link: var(--color-link, #0bb4ba);
+    --color-gray: #dfe2e6;
+    --color-light-gray: #fafafa;
+    --color-dark-gray: var(--color-text-secondary, #a2a2a2);
+    --color-darker-gray: var(--color-darker-gray, #999);
+    --color-dark: #233d4d;
+    --color-william: #395e66;
+    --color-electric-violet: #7549fa;
+    --color-alto: #dbdbdb;
+    --color-blue-dianne: #233d4d;
+    --color-medium-purple: #7756da;
+    --color-japonica: var(--color-japonica, #dd7373);
+    --color-matisse: #2360a7;
+    --color-cupid: var(--color-cupid, #fac4c4);
+    --color-medium-pink: #c961aa;
+    --font-size-extra-large: 20px;
+    --font-size-large: 18px;
+    --font-size-medium: 16px;
+    --font-size-base: 14px;
+    --font-size-small: 12px;
+    --font-size-extra-small: 10px;
+    --font-size-h1: 36px;
+    --font-size-h2: 30px;
+    --font-size-h3: 24px;
+    --font-size-h4: 18px;
+    --font-size-h5: 14px;
+    --font-size-h6: 12px;
+    --font-weight-primary: 600;
+    --font-weight-bold: bold;
+    --line-height-base: 1.428571429;
+    --line-height-computed: 20px;
+    --headings-line-height: 1.1
+    --font:normal 14px var(--text-font-stack,"Open Sans","Arial",sans-serif);
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
 
 .main-container {
   background-color: var(--gray-0);
