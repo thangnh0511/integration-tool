@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Include the Tables plugin CSS file -->
+    <link rel="stylesheet" href="../css/plugins/table.min.css">
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <!-- https://prismjs.com/ -->
+    <link rel="stylesheet" href="prism.css">
+    <title>Integration Tool</title>
+  </head>
+  <body>
+    
+    <div class="container">
+      <h2>Common Integration</h2>
+      <h3 class="second-title">Search Box</h3>
+      <div class="dropdown">
+        <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Platform
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
+      <div class="api-card">
+          <span class="tag type outbound">Outbound</span>               
+          <span class="tag method post">POST</span>
+          <div class="api__header">
+              <h3 class="api__header">POST: Create Candidate</h3>
+            </div>
+          <div class="box-info">
+            <span class="small-title">Description</span>
+            <div class="box-info__content">
+              The request to create a candidate in Smart Recruiters (run after GET JOB ID Request) {{JoID}} should populate once GET Job ID is ran (__ex_id_1: Smart Recruiters Candidate ID, __ex_id_2: Smart Recrutiers Job ID)
+            </div>
+          </div>
+          <div class="box-info">
+            <span class="small-title">Header</span>
+            <div class="box-info__content">
+              https://api.smartrecruiters.com/jobs/{{__ex_id_2}}/candidates
+            </div>
+          </div>
+          <div class="box-info">
+            <span class="small-title">Payload</span>
+            <div class="box-info__content">
+              <div>
+                <pre class="payload container">
+                  <code class="language-Jjinja2">
+                    {%- set file = __long_id | get_resume_filename -%}
+                    {%- set extension = (file or '').split('.')[-1].upper() -%}
+                    {%- set data = __long_id|get_base64_resume_content -%}
+                    ------WebKitFormBoundary7MA4YWxkTrZu0gW
+                    Content-Disposition: form-data; name="attachmentType"
+                    
+                    RESUME
+                    ------WebKitFormBoundary7MA4YWxkTrZu0gW
+                    Content-Disposition: form-data; name="file"; filename="{{__long_id|get_resume_filename}}"
+                    
+                    ------WebKitFormBoundary7MA4YWxkTrZu0gW--
+                </code>
+              </pre>
+              </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <script src="prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

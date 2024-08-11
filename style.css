@@ -1,0 +1,229 @@
+@import url('/notionApp2/index.css');
+
+/* :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--gradient-9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vanilla:hover {
+  filter: drop-shadow(0 0 2em #f7df1eaa);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
+
+.main-container {
+  background-color: var(--gray-0);
+  width: 60%;
+  min-height: 400px;
+  box-shadow: var(--shadow-4);
+  margin: auto;
+  padding: 40px;
+  border-radius: var(--radius-4);
+}
+
+
+.main-title {
+  font-weight: var(--font-weight-7);
+  /* letter-spacing: var(--font-letterspacing-3); */
+  /* line-height: var(--font-lineheight-3); */
+  font-size: var(--font-size-4);
+}
+
+.second-title {
+  font-weight: var(--font-weight-7);
+  /* letter-spacing: var(--font-letterspacing-3);
+  line-height: var(--font-lineheight-3); */
+  font-size: var(--font-size-2);
+}
+
+.api-card {
+  margin-top: 20px;
+  background-color: var(--gray-0);
+  width:100%;
+  min-height: 400px;
+  box-shadow: var(--shadow-4);
+  /* margin: auto; */
+  padding: 14px;
+  border-radius: var(--radius-4);
+}
+
+.tag {
+  margin: 10px 0;
+  margin-right: 10px;
+  padding: 4px 10px;
+  font-weight: var(--font-weight-7);
+  /* max-width: 100px; */
+  display: inline-block;
+}
+
+
+.method {
+  /* min-width: 80px; */
+  border-radius: var(--radius-4);
+  /* min-width: 80px; */
+  /* display: inline-block; */
+}
+
+.get {
+  background-color: var(--green-7);
+}
+
+.post {
+  background-color: var(--yellow-6);
+  color: var(--color-white);
+}
+
+.type {
+  border-radius: var(--radius-4);
+}
+
+.outbound {
+  background-color: var(--green-7);
+  color: var(--color-white);
+}
+
+.inbound {
+  background-color: var(--red-12);
+}
+
+.api__header {
+}
+
+.api__header > h3 {
+  display: inline-block;
+  font-weight: var(--font-weight-7);
+}
+
+.box-info {
+  border-radius: var(--radius-3);
+  background-color: var(--stone-1);
+  padding: 6px;
+  box-shadow: var(--shadow-3);
+  margin: 20px 0px;
+}
+
+.box-info .small-title {
+  font-weight: var(--font-weight-7);
+  letter-spacing: var(--font-letterspacing-3);
+  line-height: var(--font-lineheight-3);
+  font-size: var(--font-size-2);
+  color: var(--cyan-5);
+}
+
+.box-info .box-info__content {
+  display: block;
+  width: 100%;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+/* 
+code {
+  color: #c7254e;
+  background-color: #f9f2f4;
+} */
+
+pre {
+  white-space: pre; /* Maintain whitespace and line breaks */
+  font-family: monospace; /* Use monospace font for code display */
+  background: #f4f4f4; /* Light background color */
+  padding: 10px; /* Padding around the text */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  overflow: auto;
+  width: 100%;
+}
