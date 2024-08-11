@@ -129,25 +129,31 @@ body {
   /* display: inline-block; */
 }
 
-.get {
+.GET {
   background-color: var(--green-7);
 }
 
-.post {
+.POST {
   background-color: var(--yellow-6);
   color: var(--color-white);
 }
+
+.PUT {
+  background-color: orange;
+  color: var(--color-white);
+}
+
 
 .type {
   border-radius: var(--radius-4);
 }
 
-.outbound {
+.OUTBOUND {
   background-color: var(--green-7);
   color: var(--color-white);
 }
 
-.inbound {
+.INBOUND {
   background-color: var(--red-12);
 }
 
@@ -202,4 +208,8 @@ pre {
   border-radius: 5px; /* Rounded corners */
   overflow: auto;
   width: 100%;
+}
+
+#platform-title {
+  margin: 20px 0;
 }
