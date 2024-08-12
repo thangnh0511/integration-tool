@@ -13,7 +13,6 @@
     "vite": "^5.4.0"
   },
   "dependencies": {
-    "@notionhq/client": "^2.2.15",
-    "froala-editor": "^4.2.1"
+    "@notionhq/client": "^2.2.15"
   }
 }

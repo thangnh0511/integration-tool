@@ -94,11 +94,13 @@ body {
   font-size: var(--font-size-4);
 }
 
-.second-title {
+/* .second-title {
   font-weight: var(--font-weight-7);
-  /* letter-spacing: var(--font-letterspacing-3);
-  line-height: var(--font-lineheight-3); */
   font-size: var(--font-size-2);
+} */
+
+button {
+  font-size: var(--font-size-h4) !important;
 }
 
 .api-card {
@@ -129,16 +131,17 @@ body {
   /* display: inline-block; */
 }
 
-.GET {
+.get {
   background-color: var(--green-7);
+  color: white;
 }
 
-.POST {
+.post {
   background-color: var(--yellow-6);
   color: var(--color-white);
 }
 
-.PUT {
+.put {
   background-color: orange;
   color: var(--color-white);
 }
@@ -148,12 +151,12 @@ body {
   border-radius: var(--radius-4);
 }
 
-.OUTBOUND {
+.outbound {
   background-color: var(--green-7);
   color: var(--color-white);
 }
 
-.INBOUND {
+.inbound {
   background-color: var(--red-12);
 }
 
@@ -186,30 +189,49 @@ body {
   width: 100%;
 }
 
-pre {
-  background-color: #f4f4f4;
-  padding: 15px;
-  border-radius: 5px;
-  overflow-x: auto;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-}
-/* 
-code {
-  color: #c7254e;
-  background-color: #f9f2f4;
-} */
-
-pre {
-  white-space: pre; /* Maintain whitespace and line breaks */
-  font-family: monospace; /* Use monospace font for code display */
-  background: #f4f4f4; /* Light background color */
-  padding: 10px; /* Padding around the text */
-  border: 1px solid #ccc; /* Light border */
-  border-radius: 5px; /* Rounded corners */
-  overflow: auto;
-  width: 100%;
-}
 
 #platform-title {
   margin: 20px 0;
+}
+
+pre {
+  background-color: #2d2d2d;
+  color: #f8f8f2;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  line-height: 1.5;
+  position: relative;
+}
+code {
+  font-family: "Courier New", Courier, monospace;
+  color: #f8f8f2;
+}
+.keyword {
+  color: #66d9ef;
+}
+.string {
+  color: #a6e22e;
+}
+.comment {
+  color: #75715e;
+}
+.copy-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.copy-button:hover {
+  background-color: #0056b3;
+}
+
+.hide {
+  display: none;
 }

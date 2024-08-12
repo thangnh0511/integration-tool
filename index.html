@@ -8,8 +8,9 @@
     <!-- Include the Tables plugin CSS file -->
     <link rel="stylesheet" href="index.css"/>
     <link rel="stylesheet" href="style.css"/>
-    <!-- https://prismjs.com/ -->
-    <link rel="stylesheet" href="prism.css">
+
+    <link rel="stylesheet" href="prism.css"/>
+
     <title>Integration Tool</title>
   </head>
   <body>
@@ -48,23 +49,85 @@
               https://api.smartrecruiters.com/jobs/{{__ex_id_2}}/candidates
             </div>
           </div>
-          <div class="box-info">
+          <div class="box-info display-active">
             <span class="small-title">Payload</span>
             <div class="box-info__content">
               <div>
                 <pre class="payload container">
-                  <code class="language-Jjinja2">
-                    {%- set file = __long_id | get_resume_filename -%}
-                    {%- set extension = (file or '').split('.')[-1].upper() -%}
-                    {%- set data = __long_id|get_base64_resume_content -%}
-                    ------WebKitFormBoundary7MA4YWxkTrZu0gW
-                    Content-Disposition: form-data; name="attachmentType"
-                    
-                    RESUME
-                    ------WebKitFormBoundary7MA4YWxkTrZu0gW
-                    Content-Disposition: form-data; name="file"; filename="{{__long_id|get_resume_filename}}"
-                    
-                    ------WebKitFormBoundary7MA4YWxkTrZu0gW--
+                  <code id="payload" class="language-json5 line-numbers">
+                                     
+                  
+
+    
+        
+            
+                {{globals.rakuten_username}}
+                {{globals.rakuten_password}}                
+            
+        
+    
+{% set attendees = c_attendees | parse_json %}
+{% set employee_ids = [] %}
+{% for attendee in attendees %}
+{% if attendee.is_optional == false %}
+{% set _ = employee_ids.append(attendee.employee_id) %}
+{% endif %}
+{% endfor %}
+    
+		
+			
+				
+					{{__application_id}}
+				
+					{% if __itv_complex_sequent_data -%}
+					{% for itv in __itv_complex_sequent_data -%}
+                   
+                        
+                           {% for employee_id in employee_ids -%}
+                        	
+                            	{{employee_id}}
+                        	
+                   			{% endfor -%}
+                        	{{ itv['scheduled_at'] | strftime('%Y-%m-%dT%H:%M:%S', 'Asia/Singapore')}}
+                        	{{ itv['scheduled_end_time'] | strftime('%Y-%m-%dT%H:%M:%S', 'Asia/Singapore')}}
+
+                            
+                              {%- if __interview_type == 2 -%}
+                                        R1_PH_RR
+                                    {%- elif c_candidate_round != "R1" and __interview_type != 2 -%}
+                                        {{c_candidate_round}}_{{ __interview_type | mapvalue("WorkdayInterviewType", "")}}_RR
+                                    {%- else -%}
+                                      R1_PH_RR
+                                    {%- endif -%}                             
+                            
+                        
+                        {% if c_questionnaire_id %}
+                        
+                           {{c_questionnaire_id}}
+                        
+                        {% endif%}
+                    	
+				   
+     					{%- endfor -%}
+					{%- else -%}
+                   
+                    	
+                            {% for employee_id in employee_ids -%}
+							
+                            	{{employee_id}}
+                        	
+                            {% endfor -%}
+                        	{{__scheduled_at | strftime('%Y-%m-%dT%H:%M:%S', 'Asia/Singapore') }}
+                        	{{ __scheduled_end_time | strftime('%Y-%m-%dT%H:%M:%S', 'Asia/Singapore')}}
+
+                            
+                              {%- if __interview_type == 2 -%}
+                                        R1_PH_RR
+                                    {%- elif c_candidate_round != "R1" and __interview_type != 2 -%}
+                                        {{c_candidate_round}}_{{ __interview_type | mapvalue("WorkdayInterviewType", "")}}_RR
+                                    {%- else -%}
+                                      R1_PH_RR
+                                    {%- endif -%}           
                 </code>
               </pre>
               </div>
